@@ -1,0 +1,4 @@
+﻿Operación Compilar iniciada..
+1>------ Operación Compilar iniciada: proyecto: WindowsFormsApp1, configuración: Debug Any CPU ------
+1>D:\IntroElementos_C_Sharp\WindowsFormsApp1\Program.cs(21,15,21,19): error CS1061: "Ust" no contiene una definición para "hola" ni un método de extensión accesible "hola" que acepte un primer argumento del tipo "Ust" (¿falta alguna directiva using o una referencia de ensamblado?)
+========== Compilar: 0 correctos, 1 incorrectos, 0 actualizados, 0 omitidos ==========
