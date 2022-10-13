@@ -86,24 +86,7 @@ namespace WindowsFormsApp1
             return s;
         }
 
-        // Ejercicio 7
-        static int calcularPIGregory()
-        {
-            int n = -1;
-            int s = 0;
-            int d = 1;
-            int t = 0;
-            for (int c = 1; c < 100; c++)
-            {
-                n = n * (-1);
-                d = d * 2;
-                t = n / d;
-                s = s + t;
-            }
-            return s;
-        }
-
-        //Ejercicio 8
+        //Ejercicio 7
         public double sumaSerie1()
         {
             double n;
@@ -120,7 +103,7 @@ namespace WindowsFormsApp1
             return s;
         }
 
-        //Ejercicio 9
+        //Ejercicio 8
         public double sumaSerie2()
         {
             double n = -1;
@@ -128,7 +111,7 @@ namespace WindowsFormsApp1
             double s = 1;
             double t = n / d;
             s = s + t;
-            for (int c = 1; c <= 10; c++)
+            for (int c = 1; c <= 20; c++)
             {
                 n = n + 2;
                 d = d * 2;
@@ -138,8 +121,27 @@ namespace WindowsFormsApp1
             return s;
         }
 
+        // Ejercicio 9
+        public double calcularPIGregory()
+        {
+            int n = -1;
+            double s = 1;
+            int d = 1;
+            double t;
+            for (int c = 1; c < 100; c++)
+            {
+                n = n * (-1);
+                d = d * 2;
+                t = n / d;
+                s = s + t;
+            }
+            return s;
+        }
+
         //Ejercicio 10
-        public long[] mostrarSerieA_b()
+
+        //Ejercicio 11 A
+        public long[] mostrarSerie11A()
         {
             long ac = 1;
             long[] res = new long[11];
@@ -152,7 +154,23 @@ namespace WindowsFormsApp1
             return res;
         }
 
-        public void mostrarVector(long [] v)
+        // Ejercicio 11 B
+        public long[] mostrarSerie11B()
+        {
+            long[] nuevo = new long[11];
+            long p = 0;
+            long u = 1;
+            for (int c = 1; c <= 10; c++)
+            {
+                nuevo[c] = p + u;
+                long n = nuevo[c];
+                p = u;
+                u = n;
+            }
+            return nuevo;
+        }
+
+        public void mostrarVector(long[] v)
         {
             for (int i = 0; i < v.Length; i++)
             {
