@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace WindowsFormsApp1
 {
@@ -170,12 +172,60 @@ namespace WindowsFormsApp1
             return nuevo;
         }
 
+        //Ejercicio 11 C
+        public long[] mostrarSerie11C()
+        {
+            long[] nuevo = new long[11];
+            long an = 0;
+            long pe = 6;
+            long ul = 0;
+            for (int c = 1; c <= 10; c++)
+            {
+                nuevo[c] = an + pe;
+                long n = nuevo[c];
+                an = pe;
+                pe = ul;
+                ul = n;
+            }
+            return nuevo;
+        }
+
+        //Ejercicio 12
+        public double promedio10Numeros(double numero)
+        {
+            double s = 0;
+            double p;
+            for (int c = 1; c < 10; c++)
+            {
+                numero = Convert.ToDouble(Interaction.InputBox("INGRESAR UN NÚMERO CUALQUIERA: "));
+                s = s + numero;
+            }
+            p = (s / 10);
+
+            return p;
+        }
         public void mostrarVector(long[] v)
         {
             for (int i = 0; i < v.Length; i++)
             {
                 v[i] = 0;
             }
+        }
+
+        public int controlarNumeroSiEstaEntre_0_100(int numero)
+        {
+            int bb = 0;
+            while (bb == 0)
+            {
+                MessageBox.Show("DIGITAR UN NÚMERO ENTRE 0 Y 1OO... ");
+                numero = Convert.ToInt32(Interaction.InputBox("INGRESAR UN NÚMERO... "));
+                if (numero >= 0 && numero <= 100)
+                {
+                    bb = 1;
+                }
+
+            }
+            return bb;
         }
 
     }
