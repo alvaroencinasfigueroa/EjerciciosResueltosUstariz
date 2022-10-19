@@ -129,7 +129,7 @@ namespace WindowsFormsApp1
             int n = -1;
             double s = 1;
             int d = 1;
-            double t;
+            double t = 0;
             for (int c = 1; c < 100; c++)
             {
                 n = n * (-1);
@@ -204,6 +204,39 @@ namespace WindowsFormsApp1
 
             return p;
         }
+
+        //Ejercicio 13
+        public int mayorDe10Numeros(int numero)
+        {
+            int mayor = numero;
+            for (int c = 1; c < 10; c++)
+            {
+                numero = Convert.ToInt32(Interaction.InputBox("INGRESAR UN NÚMERO CUALQUIERA: "));
+                mayor = numero;
+                if (numero > mayor)
+                {
+                    mayor = numero;
+                }
+            }
+            return mayor;
+        }
+
+        //Ejercicio 14
+        public int contarPositivos(int numero)
+        {
+            int cantidadPositivos = 0;
+            for (int i = 1; i < 10; i++)
+            {
+                numero = Convert.ToInt32(Interaction.InputBox("INGRESAR 10 NÚMEROS CUALQUIERA: "));
+                if (numero > 0)
+                {
+                    cantidadPositivos = cantidadPositivos + 1;
+                }
+
+            }
+            return cantidadPositivos;
+        }
+
         public void mostrarVector(long[] v)
         {
             for (int i = 0; i < v.Length; i++)

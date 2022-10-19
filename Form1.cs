@@ -127,5 +127,39 @@ namespace WindowsFormsApp1
                 MessageBox.Show(" " + serieB[i]);
             }
         }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            Ust u11c = new Ust();
+            long[] serieC = u11c.mostrarSerie11C();
+            for (int i = 0; i < serieC.Length; i++)
+            {
+                MessageBox.Show(" " + serieC[i]);
+            }
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            Ust u12 = new Ust();
+            double numero = Convert.ToDouble(Interaction.InputBox("INGRESAR UN NÚMERO CUALQUIERA: "));
+            double promedio = u12.promedio10Numeros(numero);
+            MessageBox.Show("EL PROMEDIO DE LOS 10 NÚMEROS ES: " + promedio);
+        }
+
+        private void button25_Click(object sender, EventArgs e)
+        {
+            Ust u13 = new Ust();
+            int numero = Convert.ToInt32(Interaction.InputBox("INGRESAR UN NÚMERO CUALQUIERA: "));
+            int mayor = u13.mayorDe10Numeros(numero);
+            MessageBox.Show("EL MAYOR DE LOS 10 NÚMERO ES: " + mayor);
+        }
+
+        private void button26_Click(object sender, EventArgs e)
+        {
+            Ust u14 = new Ust();
+            int numero = Convert.ToInt32(Interaction.InputBox("INGRESAR NÚMEROS: "));
+            int positivos = u14.contarPositivos(numero);
+            MessageBox.Show("LA CANTIDAD DE POSITIVOS ES: " + positivos);
+        }
     }
 }
