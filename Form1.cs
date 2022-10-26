@@ -104,7 +104,7 @@ namespace WindowsFormsApp1
 
         private void button20_Click(object sender, EventArgs e)
         {
-
+            
 
         }
 
@@ -121,7 +121,7 @@ namespace WindowsFormsApp1
         private void button22_Click(object sender, EventArgs e)
         {
             Ust u11b = new Ust();
-            long[] serieB = u11b.mostrarSerie11B();
+            long [] serieB = u11b.mostrarSerie11B();
             for (int i = 0; i < serieB.Length; i++)
             {
                 MessageBox.Show(" " + serieB[i]);
@@ -131,19 +131,18 @@ namespace WindowsFormsApp1
         private void button23_Click(object sender, EventArgs e)
         {
             Ust u11c = new Ust();
-            long[] serieC = u11c.mostrarSerie11C();
-            for (int i = 0; i < serieC.Length; i++)
-            {
+            long [] serieC = u11c.mostrarSerie11C();
+            for (int i = 0; i < serieC.Length; i++) {
                 MessageBox.Show(" " + serieC[i]);
             }
         }
 
         private void button24_Click(object sender, EventArgs e)
         {
-            Ust u12 = new Ust();
-            double numero = Convert.ToDouble(Interaction.InputBox("INGRESAR UN NÚMERO CUALQUIERA: "));
-            double promedio = u12.promedio10Numeros(numero);
-            MessageBox.Show("EL PROMEDIO DE LOS 10 NÚMEROS ES: " + promedio);
+                Ust u12 = new Ust();
+                double numero = Convert.ToDouble(Interaction.InputBox("INGRESAR UN NÚMERO CUALQUIERA: "));
+                double promedio = u12.promedio10Numeros(numero);
+                MessageBox.Show("EL PROMEDIO DE LOS 10 NÚMEROS ES: " + promedio);
         }
 
         private void button25_Click(object sender, EventArgs e)

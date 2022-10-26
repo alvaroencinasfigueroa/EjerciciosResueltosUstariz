@@ -157,12 +157,14 @@ namespace WindowsFormsApp1
         }
 
         // Ejercicio 11 B
-        public long[] mostrarSerie11B()
+        public long [] mostrarSerie11B()
         {
-            long[] nuevo = new long[11];
+            long [] nuevo = new long[11];
             long p = 0;
+            nuevo[0] = p;
             long u = 1;
-            for (int c = 1; c <= 10; c++)
+            nuevo[1] = u;
+            for (int c = 2; c < 11; c++)
             {
                 nuevo[c] = p + u;
                 long n = nuevo[c];
@@ -173,13 +175,16 @@ namespace WindowsFormsApp1
         }
 
         //Ejercicio 11 C
-        public long[] mostrarSerie11C()
+        public long [] mostrarSerie11C()
         {
             long[] nuevo = new long[11];
             long an = 0;
+            nuevo[0] = an;
             long pe = 6;
+            nuevo[1] = pe;
             long ul = 0;
-            for (int c = 1; c <= 10; c++)
+            nuevo[2] = ul;
+            for (int c = 3; c < 11; c++)
             {
                 nuevo[c] = an + pe;
                 long n = nuevo[c];
@@ -194,7 +199,7 @@ namespace WindowsFormsApp1
         public double promedio10Numeros(double numero)
         {
             double s = 0;
-            double p;
+            double p; 
             for (int c = 1; c < 10; c++)
             {
                 numero = Convert.ToDouble(Interaction.InputBox("INGRESAR UN NÚMERO CUALQUIERA: "));
@@ -213,8 +218,7 @@ namespace WindowsFormsApp1
             {
                 numero = Convert.ToInt32(Interaction.InputBox("INGRESAR UN NÚMERO CUALQUIERA: "));
                 mayor = numero;
-                if (numero > mayor)
-                {
+                if (numero > mayor) {
                     mayor = numero;
                 }
             }
@@ -225,19 +229,19 @@ namespace WindowsFormsApp1
         public int contarPositivos(int numero)
         {
             int cantidadPositivos = 0;
-            for (int i = 1; i < 10; i++)
+            for ( int i = 1; i < 10; i++)
             {
                 numero = Convert.ToInt32(Interaction.InputBox("INGRESAR 10 NÚMEROS CUALQUIERA: "));
-                if (numero > 0)
+                if( numero > 0)
                 {
                     cantidadPositivos = cantidadPositivos + 1;
                 }
 
             }
-            return cantidadPositivos;
+            return cantidadPositivos; 
         }
 
-        public void mostrarVector(long[] v)
+        public void mostrarVector(long [] v)
         {
             for (int i = 0; i < v.Length; i++)
             {
