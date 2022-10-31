@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace WindowsFormsApp1
 {
@@ -86,24 +88,7 @@ namespace WindowsFormsApp1
             return s;
         }
 
-        // Ejercicio 7
-        static int calcularPIGregory()
-        {
-            int n = -1;
-            int s = 0;
-            int d = 1;
-            int t = 0;
-            for (int c = 1; c < 100; c++)
-            {
-                n = n * (-1);
-                d = d * 2;
-                t = n / d;
-                s = s + t;
-            }
-            return s;
-        }
-
-        //Ejercicio 8
+        //Ejercicio 7
         public double sumaSerie1()
         {
             double n;
@@ -120,7 +105,7 @@ namespace WindowsFormsApp1
             return s;
         }
 
-        //Ejercicio 9
+        //Ejercicio 8
         public double sumaSerie2()
         {
             double n = -1;
@@ -128,7 +113,7 @@ namespace WindowsFormsApp1
             double s = 1;
             double t = n / d;
             s = s + t;
-            for (int c = 1; c <= 10; c++)
+            for (int c = 1; c <= 20; c++)
             {
                 n = n + 2;
                 d = d * 2;
@@ -138,8 +123,27 @@ namespace WindowsFormsApp1
             return s;
         }
 
+        // Ejercicio 9
+        public double calcularPIGregory()
+        {
+            int n = -1;
+            double s = 1;
+            int d = 1;
+            double t = 0;
+            for (int c = 1; c < 100; c++)
+            {
+                n = n * (-1);
+                d = d * 2;
+                t = n / d;
+                s = s + t;
+            }
+            return s;
+        }
+
         //Ejercicio 10
-        public long[] mostrarSerieA_b()
+
+        //Ejercicio 11 A
+        public long[] mostrarSerie11A()
         {
             long ac = 1;
             long[] res = new long[11];
@@ -152,12 +156,149 @@ namespace WindowsFormsApp1
             return res;
         }
 
+        // Ejercicio 11 B
+        public long [] mostrarSerie11B()
+        {
+            long [] nuevo = new long[11];
+            long p = 0;
+            nuevo[0] = p;
+            long u = 1;
+            nuevo[1] = u;
+            for (int c = 2; c < 11; c++)
+            {
+                nuevo[c] = p + u;
+                long n = nuevo[c];
+                p = u;
+                u = n;
+            }
+            return nuevo;
+        }
+
+        //Ejercicio 11 C
+        public long [] mostrarSerie11C()
+        {
+            long[] nuevo = new long[11];
+            long an = 0;
+            nuevo[0] = an;
+            long pe = 6;
+            nuevo[1] = pe;
+            long ul = 0;
+            nuevo[2] = ul;
+            for (int c = 3; c < 11; c++)
+            {
+                nuevo[c] = an + pe;
+                long n = nuevo[c];
+                an = pe;
+                pe = ul;
+                ul = n;
+            }
+            return nuevo;
+        }
+
+        //Ejercicio 12
+        public double promedio10Numeros(double numero)
+        {
+            double s = 0;
+            double p; 
+            for (int c = 1; c < 10; c++)
+            {
+                numero = Convert.ToDouble(Interaction.InputBox("INGRESAR UN NÚMERO CUALQUIERA: "));
+                s = s + numero;
+            }
+            p = (s / 10);
+
+            return p;
+        }
+
+        //Ejercicio 13
+        public int mayorDe10Numeros(int numero)
+        {
+            int mayor = numero;
+            for (int c = 1; c < 10; c++)
+            {
+                numero = Convert.ToInt32(Interaction.InputBox("INGRESAR UN NÚMERO CUALQUIERA: "));
+                mayor = numero;
+                if (numero > mayor) {
+                    mayor = numero;
+                }
+            }
+            return mayor;
+        }
+
+        //Ejercicio 14
+        public int contarPositivos(int numero)
+        {
+            int cantidadPositivos = 0;
+            for ( int i = 1; i < 10; i++)
+            {
+                numero = Convert.ToInt32(Interaction.InputBox("INGRESAR 10 NÚMEROS CUALQUIERA: "));
+                if( numero > 0)
+                {
+                    cantidadPositivos = cantidadPositivos + 1;
+                }
+
+            }
+            return cantidadPositivos; 
+        }
+
+        //Ejercicio Es Espejo
+        public int esEspejo(int numero)
+        {
+            int res = 0;
+            int aux = numero;
+            int digito;
+            int inverso = 0;
+            while(aux != 0)
+            {
+                digito = aux % 10;
+                aux = aux / 10;
+                inverso = inverso * 10 + digito;
+            }
+            if (numero == inverso) {
+                res = 1;
+            } else
+            {
+                res = 0;
+            }
+            return res;
+        }
+
+        //Ejercicio Son Amigos
+        public int sumaDivisores(int numero)
+        {
+            int acumulador = 0;
+            for( int i = 1; i <= numero/2; i++)
+            {
+                if (numero % i == 0) {
+                    acumulador = acumulador + i;
+                }
+            }
+            return acumulador;
+        }
+
+
         public void mostrarVector(long [] v)
         {
             for (int i = 0; i < v.Length; i++)
             {
                 v[i] = 0;
             }
+        }
+
+        public int controlarNumeroSiEstaEntre_0_100(int numero)
+        {
+            int bb = 0;
+            while (bb == 0)
+            {
+                MessageBox.Show("DIGITAR UN NÚMERO ENTRE 0 Y 1OO... ");
+                numero = Convert.ToInt32(Interaction.InputBox("INGRESAR UN NÚMERO... "));
+                if (numero >= 0 && numero <= 100)
+                {
+                    bb = 1;
+                }
+
+            }
+            return bb;
         }
 
     }
